@@ -1,7 +1,26 @@
-// main.scss
-// Import variables, mixins, and other partial
-@import './_partial/variables';
-@import './_partial/reset';
-// Import components and layouts
-@import './_components/portfolio'
+// This is a single file output by sass. It intended to ONLY @import other files
 
+// 1-HELPERS
+@import './1-helper/variables';
+@import './1-helper/function';
+@import './1-helper/mixins';
+
+// 2-TOOLS
+
+// 3-BASICS
+@import './3-basis/reset';
+@import './3-basis/base';
+@import './3-basis/buttons';
+@import './3-basis/links';
+
+// 4-LAYOUT
+@import './4-layout/navigation';
+@import './4-layout/footer';
+@import './4-layout/section-title';
+
+// 5-PAGES
+@import './5-pages/heroes';
+@import './5-pages/aboutme';
+@import './5-pages/skills';
+@import './5-pages/projects';
+@import './5-pages/contactme'
