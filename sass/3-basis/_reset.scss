@@ -2,7 +2,7 @@
 // ====================== RESET CSS =============================
 html{
     box-sizing: border-box;
-    font-family: map-get($font-family, "Roboto" );
+    font-family: map-get($font-family, "fira-code" );
 }
 // Box sizing rules
 *::after,
@@ -23,7 +23,8 @@ body,
 h1, h2, h3, h4, h5, h6,
 figure,
 blockquote,
-dl, dd {
+dl, dd,
+p {
     margin: 0;
     padding: 0;
 }
