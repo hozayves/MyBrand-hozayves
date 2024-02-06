@@ -1,0 +1,17 @@
+.container {
+    color: map-get($colors, "white" );
+    padding: 1.2rem;
+    @include mobiles {
+        position: relative;
+        padding: 1rem 2rem;
+    }
+    @include tables {
+        padding: 2rem 3rem;
+    }
+    @include sm-desktop {
+        padding: 2rem 5rem;
+    }
+    @include lg-desktop {
+        padding: 2rem 5rem;
+    }
+}
