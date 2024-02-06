@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;500;700&family=Fira+Code:wght@300;400;600;700&display=swap");
 html {
   box-sizing: border-box;
-  font-family: "Roboto";
+  font-family: "Fira Code";
 }
 
 *::after,
@@ -22,7 +22,8 @@ body,
 h1, h2, h3, h4, h5, h6,
 figure,
 blockquote,
-dl, dd {
+dl, dd,
+p {
   margin: 0;
   padding: 0;
 }
@@ -60,17 +61,17 @@ picture {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
-    padding: 2rem 3rem;
+    padding: 1rem 3rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .container {
-    padding: 2rem 5rem;
+    padding: 1rem 4rem;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    padding: 2rem 5rem;
+    padding: 1rem 4rem;
   }
 }
 
@@ -223,4 +224,249 @@ picture {
   nav {
     visibility: visible;
   }
+}
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 500;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-title::before {
+  content: "</";
+}
+
+.section-title::after {
+  content: ">";
+}
+
+.section-line {
+  border: 1px solid white;
+  width: 450px;
+  margin-left: 1.5rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  main {
+    padding: 0 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    padding: 0 5rem;
+  }
+}
+
+.hero {
+  margin: 4rem 0 0;
+}
+@media (min-width: 1200px) {
+  .hero {
+    width: 50rem;
+  }
+}
+.hero-greet {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-greet {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-greet {
+    font-size: 3.5rem;
+  }
+}
+.hero-name, .hero-work {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Segoe UI";
+  font-size: 4rem;
+  line-height: 1.2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.hero-bio {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-top: 10px;
+  line-height: 1.2;
+  font-family: "Segoe UI";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-bio {
+    width: 86%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-bio {
+    width: 85%;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-bio {
+    width: 85%;
+  }
+}
+
+.aboutme {
+  margin: 5rem 0;
+}
+.aboutme-about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+  font-family: "Segoe UI";
+  line-height: 1.5;
+  font-weight: 400;
+  margin-top: 3rem;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .aboutme-about {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1200px) {
+  .aboutme-about {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.aboutme p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .aboutme p {
+    flex-basis: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .aboutme p {
+    flex-basis: 60%;
+    padding: 0;
+  }
+}
+.aboutme-profile {
+  width: 60%;
+  align-self: center;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .aboutme-profile {
+    flex-basis: 35%;
+  }
+}
+@media (min-width: 1200px) {
+  .aboutme-profile {
+    flex-basis: 30%;
+  }
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  font-family: "Segoe UI";
+}
+.skills-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.skills-header-heading {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+.skills-header-speak {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.skills-section {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+.skills-cards-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .skills-cards-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .skills-cards-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .skills-cards-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.skills-name {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.137);
+  background-color: rgba(255, 255, 255, 0.005);
+  padding: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .skills-name {
+    flex-basis: 35%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .skills-name {
+    flex-basis: 36%;
+  }
+}
+@media (min-width: 1200px) {
+  .skills-name {
+    flex-basis: 39%;
+  }
+}
+.skills-name::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: auto;
+  background-size: 400% 400%;
+  animation: gradientforlanguage 5s ease infinite;
+  top: 0;
+  transition-duration: 0.5s;
 }/*# sourceMappingURL=main.css.map */
