@@ -1,0 +1,117 @@
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 100px;
+        max-width: 100%;
+        background-color: map-get($colors, "secondary-color");
+        padding: 0 1rem;
+        &-logo {
+            width: 50px;
+            @include tables {
+                width: 70px;
+            }
+            @include sm-desktop {
+                width: 70px;
+            }
+            @include lg-desktop {
+                width: 70px;
+            }
+        }
+        nav {
+            @include mobiles {
+                visibility: hidden;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100vh;
+                background-color: map-get($colors, "secondary-color" );
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            ul {
+                display: flex;
+                margin: 0;
+                align-items: center;
+                justify-content: center;
+                padding: 0 1rem;
+                @include mobiles {
+                    flex-direction: column;
+                }
+                @include tables {
+                    gap: 2.3rem;  
+                }
+                @include sm-desktop {
+                    gap: 2.3rem;
+                }
+                @include lg-desktop {
+                    gap: 2.5rem;
+                }
+            }
+            li {
+                width: 100%;
+                list-style-type: none;
+                @include mobiles {
+                    padding: 1rem;
+                }
+                @include tables {
+                    padding: 1.5rem 0;
+                }
+                @include sm-desktop {
+                    padding: 1.5rem 0;
+                }
+                @include lg-desktop {
+                    padding: 1.5rem 0
+                }
+                text-align: center;
+                
+                a {
+                    text-decoration: none;
+                    color: map-get($colors, "white");
+                    font-size: 0.7rem;
+                    font-family: map-get($font-family, "fira-code");
+                    @include tables {
+                        font-size: 0.9rem;
+                    }
+                    @include sm-desktop {
+                        font-size: 1rem
+                    }
+                    @include lg-desktop {
+                        font-size: 1rem;
+                    }
+                }
+                a::before{
+                    content: "</"
+                }
+                a::after {
+                    content: ">"
+                }
+            }
+
+        }
+        &-hamburger {
+            z-index: 3;
+                img {
+                    width: 25px;
+                    z-index: 3;
+                }
+            @include tables {
+                display: none;
+            }
+            @include sm-desktop {
+                display: none;
+            }
+            @include lg-desktop {
+                display: none;
+            }
+        }
+    }
+@include tables {
+    nav {
+        visibility: visible;
+    }
+}
