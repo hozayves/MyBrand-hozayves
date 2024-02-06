@@ -1,5 +1,5 @@
 // google fonts Roboto & Source Code Pro
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;500;700&family=Fira+Code:wght@300;400;600;700&display=swap');
 
 $colors: (
     'bg-color': #11111b,
@@ -10,5 +10,6 @@ $colors: (
 
 $font-family: (
     'Roboto': 'Roboto',
-    'Source': 'Source Code Pro'
+    'Source': 'Source Code Pro',
+    "fira-code": "Fira Code"
 )
