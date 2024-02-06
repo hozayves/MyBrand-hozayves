@@ -1,9 +1,13 @@
 
 // ====================== RESET CSS =============================
+html{
+    box-sizing: border-box;
+    font-family: map-get($font-family, "Roboto" );
+}
 // Box sizing rules
 *::after,
 *::before {
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 // Remove border for form element and inherit font
 input,
