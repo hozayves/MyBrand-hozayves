@@ -6,12 +6,12 @@
         padding: 1rem 2rem;
     }
     @include tables {
-        padding: 2rem 3rem;
+        padding: 1rem 3rem;
     }
     @include sm-desktop {
-        padding: 2rem 5rem;
+        padding: 1rem 4rem;
     }
     @include lg-desktop {
-        padding: 2rem 5rem;
+        padding: 1rem 4rem;
     }
 }
