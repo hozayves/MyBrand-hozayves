@@ -1,0 +1,85 @@
+.skills {
+    
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 2rem;
+        font-family: "Segoe UI";
+    }
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        &-heading {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+        }
+        &-speak {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+    }
+    &-section {
+        margin-bottom: 4rem;
+        width: 100%;
+    }
+    &-cards-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
+        width: 100%;
+        @include tables {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @include sm-desktop {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @include lg-desktop {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &-name {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.137);
+        background-color: rgba(255, 255, 255, 0.005);
+        padding: 2.5rem;
+        text-align:center;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        position: relative;
+        @include tables {
+            flex-basis: 35%;
+        }
+        @include sm-desktop {
+            flex-basis: 36%;
+        }
+        @include lg-desktop {
+            flex-basis: 39%;
+        }
+    }
+    &-name::before {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 2px;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: auto;
+        background-size: 400% 400%;
+        animation: gradientforlanguage 5s ease infinite;
+        top: 0;
+        transition-duration: .5s;
+    }
+}
