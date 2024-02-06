@@ -1,0 +1,20 @@
+@mixin mobiles {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+@mixin tables {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+@mixin sm-desktop {
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+@mixin lg-desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
