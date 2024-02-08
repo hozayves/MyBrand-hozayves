@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    color: rgb(179, 179, 179);
+    font-family: map-get($font-family, "fira code");
+    gap: 2rem;
+    background-color: black;
+    &-heading {
+        font-size: 1.2rem;
+        @include tables {
+            font-size: 2rem;
+        }
+        @include sm-desktop {
+            font-size: 2rem;
+        }
+        @include lg-desktop {
+            font-size: 2.2rem;
+        }
+    }
+    &-heading:before, &-heading:after {
+        content: "\""
+    }
+    &-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    a {
+        border: 2px solid white;
+        padding: 7px;
+        border-radius: 100px;
+    }
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
