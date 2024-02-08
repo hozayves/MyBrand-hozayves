@@ -1,0 +1,200 @@
+.main-blog {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 90%;
+    @include tables {
+        margin: 8rem auto;
+        width: 550px;
+    }
+    @include sm-desktop {
+        margin: 8rem auto;
+        width:750px;
+    }
+    @include lg-desktop {
+        margin: 8rem auto;
+        width: 750px;
+    }
+}
+.blog-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+}
+.blog-search {
+    display: flex;
+    @include sm-desktop {
+        width: 60%;
+    }
+    @include lg-desktop {
+        width: 60%;
+    }
+    img {
+        position: absolute;
+        left: 2px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+    }
+    input {
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        background-color: map-get($colors, "input-color");
+        &:focus {
+            background-color: map-get($colors, "white")
+        }
+        @include sm-desktop {
+            width: 100%;
+            padding: 9px;
+        }
+        @include lg-desktop {
+            width: 100%;
+            padding: 9px;
+        }
+    }
+}
+.blog-writer {
+    border: 1px solid map-get($colors, "secondary-color");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    
+    &:hover {
+        background-color: map-get($colors, "secondary-color");
+    }
+    span {
+        display: none;
+        @include tables {
+            display: flex;
+        }
+        @include sm-desktop {
+            display: flex;
+        }
+        @include lg-desktop {
+            display: flex;
+        }
+    }
+    
+}
+.blog {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    // border: 1px solid white  ;
+    a {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.137);
+        background-color: rgba(255, 255, 255, 0.04);
+        padding: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        color: map-get($colors, "white")
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    &-blogger {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        img {
+            width: 35px;
+            height: 35px;
+        }
+        &-name {
+            font-size: 0.5rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            h2 {
+                font-size: 0.7rem;
+                letter-spacing: -1px;
+                font-weight: bold;
+            }
+            span {
+                font-size: 0.6rem;
+            }
+        }
+    }
+    &-box {
+        display: flex;
+        gap: 0.3rem;
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        width: 80%;
+    }
+    &-name {
+        line-height: 1;
+        font-size: 1rem;
+        font-weight: 700;
+        @include mobiles {
+            font-size: 0.9rem;
+        }
+        @include sm-desktop {
+            font-size: 1.5rem;
+        }
+        @include lg-desktop {
+            font-size: 1.5rem;
+        }
+    }
+    &-desc {
+        display: none;
+        @include tables {
+            display: flex;
+            font-size: 0.75rem;
+        }
+        @include sm-desktop {
+            display: flex;
+            font-size: 1rem;
+        }
+        @include lg-desktop {
+            display: flex;
+            font-size: 1rem;
+        }
+    }
+    &-image {
+        width: 100px;
+        img {
+            width: 100%;
+        }
+        @include sm-desktop {
+            width: 150px;
+        }
+        @include lg-desktop {
+            width: 200px;
+        }
+
+    }
+    &-footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        margin-top: 1rem;
+        span:nth-child(1) {
+            font-size: 0.7rem;
+            padding: 4px 6px;
+            border: 1px solid map-get($colors, "secondary-color");
+            font-weight: 500;
+            border-radius: 50px;
+        }
+        &-time {
+            font-size: 0.6rem;
+        }
+    }
+}
