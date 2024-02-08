@@ -19,11 +19,11 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="#aboutMe">AboutMe</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="./blogs.html">Blog</a></li>
                 </ul>
             </nav>
             <div class="header-hamburger">
@@ -31,8 +31,8 @@
             </div>
         </header>
         <main>
-            <section class="hero">
-                <h2 class="hero-greet responsive-test">Muraho(🙏); I'm</h2>
+            <section id="home" class="hero">
+                <h2 class="hero-greet">Muraho(🙏); I'm</h2>
                 <h1>
                     <span class="hero-name">Yves Muhoza.</span><br>
                     <span class="hero-work">I design & code for web.</span>
@@ -49,9 +49,9 @@
                     </p>
                 </div>
             </section>
-            <section class="aboutme">
+            <section id="aboutMe" class="aboutme">
                 <div class="section-header">
-                    <h2 class="section-title responsive-test">AboutMe</h2>
+                    <h2 class="section-title">AboutMe</h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="aboutme-about">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </section>
-            <section class="skills">
+            <section id="skills" class="skills">
                 <div class="section-header">
                     <h2 class="section-title responsive-test">Skills</h2>
                     <div class="section-line"></div>
@@ -124,50 +124,52 @@
                     </div>
                 </div>
             </section>
-            <section class="projects">
+            <section id="projects" class="projects responsive-test">
                 <div class="section-header">
                     <h2 class="section-title">Projects</h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="projects-boxes">
-                    <a class="projects-boxes" href="#">
-                        <div class="projects-info">
-                            <h1 class="projects-heading">Quizx</h1>
-                            <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
-                            <div class="projects-tags">
-                                <span class="projects-tag">html</span>
-                                <span class="projects-tag">tailwind-css</span>
-                                <span class="projects-tag">react</span>
-                                <span class="projects-tag">redux</span>
+                    <div class="projects-box-container">
+                        <a class="projects-box" href="#" target="_blank">
+                            <div class="projects-info">
+                                <h1 class="projects-heading">Quizx</h1>
+                                <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
+                                <div class="projects-tags">
+                                    <span class="projects-tag">html</span>
+                                    <span class="projects-tag">tailwind-css</span>
+                                    <span class="projects-tag">react</span>
+                                    <span class="projects-tag">redux</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-img">
-                            <img src="./images/preview 1.png" alt="">
-                        </div>
-                    </a>
-                    <a class="projects-boxes" href="#">
-                        <div class="projects-info">
-                            <h1 class="projects-heading">Quizx</h1>
-                            <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
-                            <div class="projects-tags">
-                                <span class="projects-tag">html</span>
-                                <span class="projects-tag">tailwind-css</span>
-                                <span class="projects-tag">react</span>
-                                <span class="projects-tag">redux</span>
+                            <div class="projects-img">
+                                <img src="./images/preview 1.png" alt="">
                             </div>
-                        </div>
-                        <div class="project-img">
-                            <img src="./images/preview 1.png" alt="">
-                        </div>
-                    </a>
+                        </a>
+                        <a class="projects-box" href="#" target="_blank">
+                            <div class="projects-info">
+                                <h1 class="projects-heading">Quizx</h1>
+                                <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
+                                <div class="projects-tags">
+                                    <span class="projects-tag">html</span>
+                                    <span class="projects-tag">tailwind-css</span>
+                                    <span class="projects-tag">react</span>
+                                    <span class="projects-tag">redux</span>
+                                </div>
+                            </div>
+                            <div class="projects-img">
+                                <img src="./images/preview 1.png" alt="">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
-            <section class="contactme">
+            <section class="contact">
                 <div class="section-header">
                     <h2 class="section-title">Contact me</h2>
                     <div class="section-line"></div>
                 </div>
-                <div class="contactme-container">
+                <div class="contact-container">
                     <form action="#">
                         <div class="contact-inputs">
                             <label for="name">Name</label>
@@ -182,30 +184,30 @@
                             <textarea id="message" placeholder="What is your feedback"></textarea>
                         </div>
                         <div>
-                            <button type="submit">Send Message</button>
+                            <button class="btn-send" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
             </section>
         </main>
-        <footer class="footer">
-            <h2 class="footer-heading">Learning, Living, Level Up.</h2>
-            <div class="footer-social">
-                <a href="#">
-                    <img src="./images/instagram(1) 1.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="./images/twitter 1.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="./images/linkedin.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="./images/github.png" alt="">
-                </a>
-            </div>
-            <p class="footer-copyright">Design & Built by Yves Muhoza &#169; 2024</p>
-        </footer>
     </div>
+    <footer class="footer">
+        <h2 class="footer-heading">Learning, Living, Level Up.</h2>
+        <div class="footer-social">
+            <a href="#" target="_blank">
+                <img src="./images/instagram(1) 1.png" alt="">
+            </a>
+            <a href="https://twitter.com/hozayves" target="_blank">
+                <img src="./images/twitter 1.png" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/muhoza-yves-ab06a7133/" target="_blank">
+                <img src="./images/linkedin.png" alt="">
+            </a>
+            <a href="https://github.com/hozayves" target="_blank">
+                <img src="./images/github.png" alt="">
+            </a>
+        </div>
+        <p class="footer-copyright">Design & Built by Yves Muhoza &#169; 2024</p>
+    </footer>
 </body>
 </html>
