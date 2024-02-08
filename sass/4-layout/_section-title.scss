@@ -6,6 +6,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @include mobiles {
+        font-size: 0.8rem;
+    }
+    @include tables {
+        font-size: 1rem;
+    }
 }
 .section-title::before {
     content: "</"
@@ -17,4 +23,10 @@
     border: 1px solid white;
     width: 450px;
     margin-left: 1.5rem;
+    @include mobiles {
+        width: 160px;
+    }
+    @include tables {
+        width: 60%;
+    }
 }
