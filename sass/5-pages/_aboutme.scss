@@ -9,7 +9,7 @@
         font-family: "Segoe UI";
         line-height: 1.5;
         font-weight: 400;
-        margin-top: 3rem;
+        padding: 2rem 1.5rem;
         @include sm-desktop {
             flex-direction: row;
             justify-content: center;
