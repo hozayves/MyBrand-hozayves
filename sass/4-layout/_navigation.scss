@@ -6,6 +6,15 @@
         max-width: 100%;
         background-color: map-get($colors, "secondary-color");
         padding: 0 1rem;
+        position: fixed;
+        width: 85%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 10;
+        @include tables {
+            top: 2%;
+        }
         &-logo {
             width: 50px;
             @include tables {
@@ -99,9 +108,6 @@
                     width: 25px;
                     z-index: 3;
                 }
-            @include tables {
-                display: none;
-            }
             @include sm-desktop {
                 display: none;
             }
@@ -112,6 +118,6 @@
     }
 @include tables {
     nav {
-        visibility: visible;
+        visibility: hidden;
     }
 }
