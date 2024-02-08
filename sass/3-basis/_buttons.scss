@@ -1,0 +1,17 @@
+.btn-send {
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: "Segoe UI";
+    background-color: map-get($colors, "bg-color");
+    border-radius: 5px;
+    color: map-get($colors, "white");
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.btn-send:hover {
+    color: map-get($colors, "bg-color");
+    background-color: map-get($colors, "input-color");
+    border: 2px solid map-get($colors, "input-color")
+}
