@@ -7,19 +7,26 @@ main {
     }
 }
 .hero {
-    margin: 4rem 0 0;
+    margin: 5rem 0 0;
+    @include tables {
+        margin: 9rem 0 0;
+    }
+    @include sm-desktop {
+        margin: 7rem 0 0;
+    }
     @include lg-desktop {
         width: 50rem;
+        margin: 7rem 0 0;
     }
     &-greet {
         font-size: 2.5rem;
         font-weight: 600;
         // color: map-get($colors, "white");
         @include sm-desktop {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
         @include lg-desktop {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
     }
     &-name, 
@@ -32,10 +39,10 @@ main {
         user-select: none;
     }
     &-bio {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 400;
         padding-top: 10px;
-        line-height: 1.2;
+        line-height: 1.5;
         font-family: "Segoe UI";
         user-select: none;
         @include tables {
@@ -43,9 +50,11 @@ main {
         }
         @include sm-desktop {
             width: 85%;
+            margin-top: 2rem;
         }
         @include lg-desktop {
             width: 85%;
+            margin-top: 2rem;
         }
     }
 }
