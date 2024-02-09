@@ -1,25 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;500;700&family=Fira+Code:wght@300;400;600;700&display=swap");
-@media (max-width: 767px) {
-  .responsive-test {
-    color: red;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .responsive-test {
-    color: blue;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .responsive-test {
-    color: orange;
-  }
-}
-@media (min-width: 1200px) {
-  .responsive-test {
-    color: purple;
-  }
-}
-
 html {
   box-sizing: border-box;
   font-family: "Fira Code";
