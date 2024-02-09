@@ -1,0 +1,45 @@
+.login {
+    margin: 8rem auto;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    &-choice {
+        display: flex;
+        flex-direction: column;
+        li {
+            display: flex;
+            border: 1px solid white;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            &:hover {
+                background-color: map-get($colors, "secondary-color");
+            }
+            img {
+                width: 30px;
+            }
+        }
+    }
+    &-no-account {
+        font-size: 1rem;
+        a {
+            font-weight: 700;
+            text-decoration: none;
+            &:visited {
+                color: map-get($colors, "danger");
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+    }
+}
