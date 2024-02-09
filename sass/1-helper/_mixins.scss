@@ -18,17 +18,3 @@
         @content;
     }
 }
-.responsive-test {
-    @include mobiles {
-        color: red;
-    }
-    @include tables {
-        color: blue;
-    }
-    @include sm-desktop {
-        color: orange
-    }
-    @include lg-desktop {
-        color: purple
-    }
-}
