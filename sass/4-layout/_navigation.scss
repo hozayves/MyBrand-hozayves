@@ -102,8 +102,19 @@
             }
 
         }
+        &-user-hamburger {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
         &-hamburger {
             z-index: 3;
+            padding: 5px;
+            &:hover {
+                background-color: map-get($colors, "bg-color");
+                cursor: pointer;
+            }
                 img {
                     width: 25px;
                     z-index: 3;

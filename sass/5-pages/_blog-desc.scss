@@ -1,0 +1,165 @@
+.blogx {
+    &-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        &-title {
+            font-weight: 700;
+            line-height: 1.2;
+            font-size: 1rem;
+            @include tables {
+                font-size: 2rem;
+                width: 500px;
+            }
+            @include sm-desktop {
+                font-size: 2rem;
+                width: 80%;
+            }
+            @include lg-desktop {
+                font-size: 2rem;
+                width: 80%;
+            }
+        }
+    }
+    &-blogger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.5rem;
+        @include tables {
+            flex-direction: row;
+            align-items: center;
+        }
+        @include sm-desktop {
+            flex-direction: row;
+            align-items: center;
+        }
+        @include lg-desktop {
+            flex-direction: row;
+            align-items: center;
+        }
+        &-profile {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.5rem;
+            &-img {
+                width: 30px;
+                height: 30px;
+                @include tables {
+                    width: 45px;
+                    height: 45px;
+                }
+                @include sm-desktop {
+                    width: 50px;
+                    height: 50px;
+                }
+                @include lg-desktop {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            &-name {
+                
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.2rem;
+                }
+                h2 {
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    @include tables {
+                        font-size: 0.9rem;
+                    }
+                    @include sm-desktop {
+                        font-size: 1rem;
+                    }
+                    @include lg-desktop {
+                        font-size: 1rem;
+                    }
+                }
+                span {
+                    font-size: 0.6rem;
+                    @include tables {
+                        font-size: 0.7rem;
+                    }
+                    @include sm-desktop {
+                        font-size: 0.8rem;
+                    }
+                    @include lg-desktop {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+        &-links {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: flex-end;
+            @include tables {
+                align-self: center;
+            }
+            @include sm-desktop {
+                align-self: center;
+            }
+            @include lg-desktop{
+                align-self: center;
+            }
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 3px;
+                border: 1px solid map-get($colors, "secondary-color");
+                border-radius: 5px;
+                &:hover {
+                    background-color: map-get($colors, "secondary-color");
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &-content {
+        padding: 0 0.7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        p,li {
+            letter-spacing: -0.003em;
+            line-height: 25px;
+            font-size: 15px;
+            word-break: break-word;
+            font-weight: 400;
+            overflow-wrap: break-word;
+            @include tables {
+                font-size: 18px;
+            }
+            @include sm-desktop {
+                font-size: 18px;
+            }
+            @include lg-desktop {
+                font-size: 20px;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            li {
+                margin-left: 2rem;
+            }
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.016em;
+            line-height: 30px;
+        }
+    }
+}

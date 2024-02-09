@@ -11,6 +11,7 @@
     background-color: black;
     &-heading {
         font-size: 1.2rem;
+        text-align: center;
         @include tables {
             font-size: 2rem;
         }
