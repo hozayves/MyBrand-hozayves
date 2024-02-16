@@ -29,7 +29,6 @@
         }
         nav {
             @include mobiles {
-                visibility: hidden;
                 position: fixed;
                 right: 0;
                 top: 0;
@@ -39,8 +38,18 @@
                 background-color: map-get($colors, "secondary-color" );
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
+            }
+            @include tables {
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                width: 50%;
+                height:100vh;
+                background-color: map-get($colors, "secondary-color");
+                transition: all .5s ease-in-out;
             }
             ul {
                 display: flex;
@@ -50,9 +59,17 @@
                 padding: 0 1rem;
                 @include mobiles {
                     flex-direction: column;
+                    justify-content: flex-start;
+                    width: 100%;
+                    margin-top: 4rem;
                 }
                 @include tables {
-                    gap: 2.3rem;  
+                    gap: .5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    width: 100%;
+                    margin-top: 5rem;
                 }
                 @include sm-desktop {
                     gap: 2.3rem;
@@ -64,11 +81,15 @@
             li {
                 width: 100%;
                 list-style-type: none;
+                text-align: center;
+                &:hover {
+                    background-color: #11111b;
+                }
                 @include mobiles {
                     padding: 1rem;
                 }
                 @include tables {
-                    padding: 1.5rem 0;
+                    padding: 0.5rem 0;
                 }
                 @include sm-desktop {
                     padding: 1.5rem 0;
@@ -76,7 +97,6 @@
                 @include lg-desktop {
                     padding: 1.5rem 0
                 }
-                text-align: center;
                 
                 a {
                     text-decoration: none;
@@ -103,22 +123,57 @@
 
         }
         &-user-hamburger {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             gap: 1rem;
         }
         &-hamburger {
             z-index: 3;
             padding: 5px;
-            &:hover {
+            position: relative;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px auto;
+            border-radius: 5px;
+            
+            a {
+                padding: 7px;
+                border-radius: 5px;
+            }
+            a:hover {
                 background-color: map-get($colors, "bg-color");
                 cursor: pointer;
+                
             }
-                img {
-                    width: 25px;
-                    z-index: 3;
+                .btn-burger {
+                    width: 30px;
+                    height: 2px;
+                    background-color: white;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+                    transition: all .5s ease-in-out;
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 2px;
+                        position: absolute;
+                        background-color: white;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+                        transition: all .5s ease-in-out;
+                    }
+                    &::before {
+                        transform: translateY(-10px);
+                    }
+                    &::after {
+                        transform: translateY(10px);
+
+                    }
                 }
+                
+                
+
             @include sm-desktop {
                 display: none;
             }
@@ -129,6 +184,38 @@
     }
 @include tables {
     nav {
-        visibility: hidden;
+        visibility: visible;
+    }
+}
+.nav-hidden {
+    display: none;
+    visibility: hidden;
+    @include sm-desktop {
+        display: flex;
+        visibility: visible;
+    }
+    @include lg-desktop {
+        display: flex;
+        visibility: visible;
+    }
+}
+.nav-visible {
+    display: flex;
+}
+.header-hamburger.open .btn-burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.header-hamburger.open .btn-burger::before {
+    transform: rotate(45deg) translate(35px, -35px);;
+}
+.header-hamburger.open .btn-burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);;
+}
+#hamburger {
+    padding: 8px;
+    &:hover {
+        background-color: #11111b;
     }
 }
