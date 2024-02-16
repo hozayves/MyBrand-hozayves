@@ -6,10 +6,11 @@
     <title>hozayves - Frontend developer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="./images/favicon1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header" >
             <div class="header-logo">
                 <img
                     class="header-logo-img1" 
@@ -17,7 +18,7 @@
                     alt="">
                 <img src="./images/logo-body.png" alt="">
             </div>
-            <nav class="nav">
+            <nav class="nav-hidden nav">
                 <ul>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="#aboutMe">AboutMe</a></li>
@@ -26,18 +27,18 @@
                     <li><a href="./blogs.html">Blog</a></li>
                 </ul>
             </nav>
-            <div class="header-hamburger">
-                <img src="./images/hamburger.png" alt="">
+            <div class="header-hamburger" id="hamburger">
+                <div class="btn-burger"></div>
             </div>
         </header>
         <main>
             <section id="home" class="hero">
-                <h2 class="hero-greet">Muraho(🙏); I'm</h2>
+                <h2 class="hero-greet" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-duration="1000" data-aos-offset="50">Muraho(🙏); I'm</h2>
                 <h1>
-                    <span class="hero-name">Yves Muhoza.</span><br>
-                    <span class="hero-work">I design & code for web.</span>
+                    <span class="hero-name" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-duration="1000">Yves Muhoza.</span><br>
+                    <span class="hero-work" data-aos="fade-down">I design & code for web.</span>
                 </h1>
-                <div class="hero-bio">
+                <div class="hero-bio" data-aos="zoom-out" data-delay="3000" data-aos-offset="100">
                     <p>
                         Web developer with experience in User Experience(UX), frontend
                         web design. I love fun Web UI, collaborate and making
@@ -55,7 +56,7 @@
                     <div class="section-line"></div>
                 </div>
                 <div class="aboutme-about">
-                    <p>Hi! My name is Yves, I'm a front-end developer on a journey 
+                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="50" data-aos-offset="100">Hi! My name is Yves, I'm a front-end developer on a journey 
                         that kicked off just over a year ago.  Self-taught and committed to
                          continuous improvement, I bring autonomy and problem-solving skills 
                         to development. Beyond the screen, my passion for film photography 
@@ -65,7 +66,7 @@
                         and dedication to your projects by giving me the opportunity to collaborate 
                         and learn. Let's create something amazing together!
                         </p>
-                    <div class="aboutme-profile">
+                    <div class="aboutme-profile" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="100">
                         <img
                             src="./images/profile.jpg" 
                             alt="">
@@ -79,47 +80,48 @@
                 </div>
                 <div class="skills-container">
                     <div class="skills-section skills-frontend">
-                        <div class="skills-header">
+                        <div class="skills-header" data-aos="zoom-in" data-aos-duration="1000">
                             <h3 class="skills-header-heading">Frontend Developer</h3>
                             <span class="skills-header-speak">>_Languages i speak:</span>
                         </div>
                         <div class="skills-cards-box">
-                            <div class="skills-name">
+                            <div class="skills-name" data-aos="fade-right" data-duration="1000">
                                 <span>HTML</span>
                             </div>
-                            <div class="skills-name">
+                            <div class="skills-name" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
                                 <span>CSS3</span>
                             </div>
-                            <div class="skills-name">
+                            <div class="skills-name" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
                                 <span>TAILWIND</span>
-                            </div><div class="skills-name">
+                            </div>
+                            <div class="skills-name" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
                                 <span>REACT JS</span>
                             </div>
-                            <div class="skills-name">
+                            <div class="skills-name" data-aos="fade-right">
                                 <span>JAVASCRIPT</span>
                             </div>
                         </div>
                     </div>
                     <div class="skills-section skills-designer">
-                        <div class="skills-header">
+                        <div class="skills-header" data-aos="zoom-in" data-aos-duration="1000">
                             <h3 class="skills-header-heading">Designer</h3>
                             <span class="skills-header-speak">Things i enjoy designing with:</span>
                         </div>
                         <div class="skills-cards-box">
-                            <div class="skills-name"><span>adobe ai</span></div>
-                            <div class="skills-name"><span>canva</span></div>
-                            <div class="skills-name"><span>adobe photoshop</span></div>
-                            <div class="skills-name"><span>figma</span></div>
+                            <div class="skills-name" data-aos="fade-right" data-duration="2000"><span>adobe ai</span></div>
+                            <div class="skills-name" data-aos="fade-left" data-duration="2000"><span>canva</span></div>
+                            <div class="skills-name" data-aos="fade-right" data-duration="2000"><span>adobe photoshop</span></div>
+                            <div class="skills-name" data-aos="fade-left" data-duration="2000"><span>figma</span></div>
                         </div>
                     </div>
                     <div class="skills-section skills-programmer">
-                        <div class="skills-header">
+                        <div class="skills-header" data-aos="zoom-in" data-aos-duration="1000">
                             <h3 class="skills-header-heading">Languages</h3>
                             <span class="skills-header-speak">>_Other language i know</span>
                         </div>
                         <div class="skills-cards-box">
-                            <div class="skills-name"><span>c</span></div>
-                            <div class="skills-name"><span>node js</span></div>
+                            <div class="skills-name" data-aos="fade-right" data-aos-duration="2000"><span>c</span></div>
+                            <div class="skills-name" data-aos="fade-left" data-aos-duration="2000"><span>node js</span></div>
                         </div>
                     </div>
                 </div>
@@ -131,7 +133,7 @@
                 </div>
                 <div class="projects-boxes">
                     <div class="projects-box-container">
-                        <a class="projects-box" href="#" target="_blank">
+                        <a class="projects-box" href="#" target="_blank" data-aos="zoom-out" data-duration="2000">
                             <div class="projects-info">
                                 <h1 class="projects-heading">Quizx</h1>
                                 <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
@@ -146,7 +148,7 @@
                                 <img src="./images/preview 1.png" alt="">
                             </div>
                         </a>
-                        <a class="projects-box" href="#" target="_blank">
+                        <a class="projects-box" href="#" target="_blank" data-aos="zoom-out" data-duration="2000">
                             <div class="projects-info">
                                 <h1 class="projects-heading">Quizx</h1>
                                 <p class="projects-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia magni deleniti error id neque enim quaerat harum quam! Et.</p>
@@ -209,5 +211,13 @@
         </div>
         <p class="footer-copyright">Design & Built by Yves Muhoza &#169; 2024</p>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      AOS.init({
+        disable: window.innerWidth <= 968
+      })
+    </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
