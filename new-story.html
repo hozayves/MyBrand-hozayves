@@ -40,23 +40,21 @@
             <div class="writer-header">
                 <button class="writer-publish">Publish</button>
             </div>
-            <div>
-                <div id="title" class="writer-editor"></div>
-                <div id="story" class="writer-editor"></div>
+            <div class="writer-container">
+                <div class="writer-input">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="title" placeholder="Title">
+                    <small></small>
+                </div>
+                <div class="writer-input">
+                    <label for="story">Tell us your story</label>
+                    <textarea type="text" id="story" class="story" placeholder="Tell us your story."></textarea>
+                    <small></small>
+                </div>
             </div>
         </main>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
-<script>
-  const title = new Quill('#title', {
-    placeholder: 'Title',
-    theme: 'bubble',
-  });
-  const story = new Quill("#story", {
-    placeholder: "Tell us your story",
-    theme: "bubble"
-  })
-</script>
 <script src="./js/main.js"></script>
+<script src="./js/new-story.js"></script>
 </html>
