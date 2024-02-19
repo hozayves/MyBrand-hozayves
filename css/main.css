@@ -208,9 +208,6 @@ hr {
   list-style-type: none;
   text-align: center;
 }
-.header nav li:hover {
-  background-color: #11111b;
-}
 @media (max-width: 767px) {
   .header nav li {
     padding: 1rem;
@@ -225,10 +222,16 @@ hr {
   .header nav li {
     padding: 1.5rem 0;
   }
+  .header nav li:hover {
+    background-color: transparent;
+  }
 }
 @media (min-width: 1200px) {
   .header nav li {
     padding: 1.5rem 0;
+  }
+  .header nav li:hover {
+    background-color: transparent;
   }
 }
 .header nav li a {
