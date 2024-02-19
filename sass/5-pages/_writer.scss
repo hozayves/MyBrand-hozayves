@@ -1,0 +1,24 @@
+.writer {
+    border: 1px solid red;
+    margin: 6rem auto 0;
+    color: map-get($colors, "input-colors") !important;
+    &-editor {
+        * {
+            color: map-get($colors, "input-color") !important
+        }
+        
+    }
+    &-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &-publish {
+        background-color: map-get($colors, "border-success");
+        border: 1px solid map-get($colors, "border-success");
+        border-radius: 5px;
+        color: inherit;
+        padding: 0.2rem 0.5rem;
+        cursor: pointer;
+    }
+}
