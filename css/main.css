@@ -1538,12 +1538,7 @@ hr {
 }
 
 .writer {
-  border: 1px solid red;
-  margin: 6rem auto 0;
-  color: !important;
-}
-.writer-editor * {
-  color: #E0E0E0 !important;
+  margin: 7rem auto 0;
 }
 .writer-header {
   display: flex;
@@ -1557,4 +1552,36 @@ hr {
   color: inherit;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+}
+.writer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.writer-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+}
+.writer-input label {
+  font-size: 0.8rem;
+  color: #E0E0E0;
+}
+.writer-input input, .writer-input textarea {
+  padding: 0.5rem 1rem;
+  width: 85%;
+  border: 1px solid #24242d;
+  border-radius: 9px;
+  background-color: #11111b;
+  color: #E0E0E0;
+  margin-bottom: 1.5rem;
+}
+.writer-input textarea {
+  height: 200px;
+  resize: none;
 }/*# sourceMappingURL=main.css.map */
