@@ -1007,6 +1007,8 @@ hr {
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
 }
 .blog-writer:hover {
   background-color: #24242d;
@@ -1533,4 +1535,26 @@ hr {
 }
 .login-no-account a:hover {
   text-decoration: underline;
+}
+
+.writer {
+  border: 1px solid red;
+  margin: 6rem auto 0;
+  color: !important;
+}
+.writer-editor * {
+  color: #E0E0E0 !important;
+}
+.writer-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.writer-publish {
+  background-color: #198754;
+  border: 1px solid #198754;
+  border-radius: 5px;
+  color: inherit;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
