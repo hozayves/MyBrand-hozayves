@@ -1,13 +1,5 @@
 .writer {
-    border: 1px solid red;
-    margin: 6rem auto 0;
-    color: map-get($colors, "input-colors") !important;
-    &-editor {
-        * {
-            color: map-get($colors, "input-color") !important
-        }
-        
-    }
+    margin: 7rem auto 0;
     &-header {
         display: flex;
         justify-content: flex-end;
@@ -20,5 +12,38 @@
         color: inherit;
         padding: 0.2rem 0.5rem;
         cursor: pointer;
+    }
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+    &-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
+        width: 100%;
+
+        label {
+            font-size: 0.8rem;
+            color: map-get($colors, "input-color")
+        }
+        input, textarea {
+            padding: 0.5rem 1rem;
+            width: 85%;
+            border: 1px solid map-get($colors, "secondary-color");
+            border-radius: 9px;
+            background-color: #11111b;
+            color: map-get($colors, "input-color");
+            margin-bottom: 1.5rem;
+        }
+        textarea {
+            height: 200px;
+            resize: none;
+        }
     }
 }
