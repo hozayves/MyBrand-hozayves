@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="./images/favicon1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.bubble.css" rel="stylesheet" />
+    <title>New Story - hozayves</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-logo">
+                <img
+                    class="header-logo-img1" 
+                    src="./images/log.png" 
+                    alt="">
+                <img src="./images/logo-body.png" alt="">
+            </div>
+            <nav class="nav nav-hidden">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#aboutMe">AboutMe</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="./blogs.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-hamburger header-user-hamburger">
+                <a href="./login.html">
+                    <img src="./images/profile-icon.png" alt="">
+                </a>
+                <div class="header-hamburger" id="hamburger">
+                    <div class="btn-burger"></div>
+                </div>
+            </div>
+        </header>
+        <main class="writer">
+            <div class="writer-header">
+                <button class="writer-publish">Publish</button>
+            </div>
+            <div>
+                <div id="title" class="writer-editor"></div>
+                <div id="story" class="writer-editor"></div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+<script>
+  const title = new Quill('#title', {
+    placeholder: 'Title',
+    theme: 'bubble',
+  });
+  const story = new Quill("#story", {
+    placeholder: "Tell us your story",
+    theme: "bubble"
+  })
+</script>
+<script src="./js/main.js"></script>
+</html>
