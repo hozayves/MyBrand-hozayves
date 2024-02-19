@@ -67,13 +67,13 @@ form.addEventListener("submit", (e) => {
     let messageWords = validateMinWords(form.elements["message"], 10, MESSAGE_50WORDS_REQUIRED)
 
     // if valid, submit form.
-    if (nameValid && emailValid && messageValid) {
+    if (nameValid && emailValid && messageValid & messageWords) {
         form.elements["name"].value = ""
         form.elements["email"].value = ""
         form.elements["message"].value = ""
         form.firstElementChild.innerText = MESSAGE_SUCCESS
+        setTimeout(() => {
+            form.firstElementChild.innerText = ""
+        }, 1000)
     }
 })
-setTimeout(() => {
-    form.firstElementChild.innerText = ""
-}, 3000)
