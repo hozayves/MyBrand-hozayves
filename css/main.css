@@ -884,6 +884,10 @@ hr {
   align-items: center;
   justify-content: center;
 }
+.contact form span {
+  color: #198754;
+  text-align: center;
+}
 .contact-inputs {
   display: flex;
   flex-direction: column;
@@ -901,6 +905,21 @@ hr {
 }
 .contact-inputs input:focus, .contact-inputs textarea:focus {
   background-color: white;
+}
+.contact-inputs small {
+  color: #dc3545;
+}
+.contact .error {
+  border-color: #dc3545;
+}
+.contact .error:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+.contact .success {
+  border-color: #198754;
+}
+.contact .success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
 }
 
 .main-blog {
