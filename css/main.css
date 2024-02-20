@@ -81,12 +81,16 @@ body {
 }
 
 hr {
-  margin: 1.5rem auto;
+  width: 100%;
+}
+
+small {
+  color: #dc3545;
 }
 
 .btn-send {
   border: 2px solid white;
-  padding: 10px;
+  padding: 10px 2rem;
   font-size: 1.2rem;
   font-weight: 700;
   font-family: "Segoe UI";
@@ -263,6 +267,9 @@ hr {
 }
 .header-user-hamburger {
   gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-hamburger {
   z-index: 3;
@@ -906,9 +913,6 @@ hr {
 .contact-inputs input:focus, .contact-inputs textarea:focus {
   background-color: white;
 }
-.contact-inputs small {
-  color: #dc3545;
-}
 .contact .error {
   border-color: #dc3545;
 }
@@ -1493,8 +1497,15 @@ hr {
   line-height: 30px;
 }
 
+#result {
+  text-align: center;
+}
+
 .login {
   margin: 8rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .login-container {
   display: flex;
@@ -1502,6 +1513,42 @@ hr {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  width: 50%;
+}
+.login-container a {
+  color: #198754;
+  text-decoration: underline;
+}
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.login-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+}
+.login-input label {
+  font-size: 0.9rem;
+}
+.login-input input {
+  padding: 0.5rem 0.2rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #24242d;
+  color: #E0E0E0;
 }
 .login-choice {
   display: flex;
@@ -1531,7 +1578,7 @@ hr {
   text-decoration: none;
 }
 .login-no-account a:visited {
-  color: #f25e5e;
+  color: #115c39;
 }
 .login-no-account a:hover {
   text-decoration: underline;
@@ -1599,4 +1646,13 @@ hr {
 .writer-input textarea {
   height: 200px;
   resize: none;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
