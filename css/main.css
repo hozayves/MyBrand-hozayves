@@ -1539,11 +1539,23 @@ hr {
 
 .writer {
   margin: 7rem auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 .writer-header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .writer-header {
+    width: 93%;
+  }
 }
 .writer-publish {
   background-color: #198754;
@@ -1553,11 +1565,14 @@ hr {
   padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
+.writer-publish:hover {
+  background-color: #157147;
+}
 .writer-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
 }
 .writer-input {
@@ -1566,7 +1581,7 @@ hr {
   justify-content: center;
   align-items: flex-start;
   gap: 5px;
-  width: 100%;
+  width: 90%;
 }
 .writer-input label {
   font-size: 0.8rem;
@@ -1574,12 +1589,12 @@ hr {
 }
 .writer-input input, .writer-input textarea {
   padding: 0.5rem 1rem;
-  width: 85%;
+  width: 100%;
   border: 1px solid #24242d;
   border-radius: 9px;
   background-color: #11111b;
   color: #E0E0E0;
-  margin-bottom: 1.5rem;
+  box-sizing: border-box;
 }
 .writer-input textarea {
   height: 200px;
