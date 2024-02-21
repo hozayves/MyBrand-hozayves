@@ -121,6 +121,9 @@ small {
   right: 0;
   margin: 0 auto;
   z-index: 10;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -271,6 +274,46 @@ small {
   justify-content: center;
   align-items: center;
 }
+.header-user-hamburger-logged {
+  position: relative;
+  padding: 5px 1rem;
+  border-radius: 100px;
+}
+.header-user-hamburger-logged span {
+  font-weight: 700;
+}
+.header-user-hamburger-logged:hover {
+  background-color: #11111b;
+  cursor: pointer;
+}
+.header-user-hamburger-popup {
+  position: absolute;
+  right: 0;
+  top: 2.5rem;
+  width: 150px;
+  border: 1px solid #24242d;
+  background-color: #11111b;
+  border-radius: 5px;
+}
+.header-user-hamburger-popup ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.header-user-hamburger-popup ul li {
+  list-style: none;
+  min-width: 100%;
+  padding: 5px 1rem;
+  box-sizing: border-box;
+}
+.header-user-hamburger-popup ul li:hover {
+  background-color: #24242d;
+}
+.header-user-hamburger-popup ul li a {
+  text-decoration: none;
+  color: #E0E0E0;
+}
 .header-hamburger {
   z-index: 3;
   padding: 5px;
@@ -371,6 +414,10 @@ small {
 }
 #hamburger:hover {
   background-color: #11111b;
+}
+
+.profile-hidden {
+  visibility: hidden;
 }
 
 .footer {
