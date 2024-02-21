@@ -50,9 +50,7 @@
         input:focus, textarea:focus {
             background-color: white;
         }
-        small {
-            color: map-get($colors, "border-error")
-        }
+        
     }
     .error {
         border-color: map-get($colors, "border-error");
