@@ -1,42 +1,4 @@
-// show a message with type of the input
-function showMessage(input, message, type) {
-    // get the small element and set the message
-    const msg = input.parentNode.querySelector("small")
-    msg.innerHTML = message;
-    // update the class for the input
-    msg.className = type ? "success" : "error"
-    return type;
-}
-// show error
-function showError(input, message) {
-    return showMessage(input, message, false)
-}
-// show success
-function showSuccess(input) {
-    return showMessage(input, "", true)
-}
-// check if an input has a value
-function hasValue(input, message) {
-    if (input.value.trim() === "") {
-        return showError(input, message)
-    }
-    return showSuccess(input)
-}
-// Check if input has valid email
-function validateEmail(input, requiredMsg, invalidMsg) {
-    // check if the value is not empty
-    if (!hasValue(input, requiredMsg)) {
-        return false
-    }
-    // validate email format
-    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-    const email = input.value.trim();
-    if (!emailRegex.test(email)) {
-        return showError(input, invalidMsg)
-    }
-    return true
-}
+import { showError, hasValue, validateEmail } from "./helper.js";
 
 const signForm = document.querySelector(".login-form");
 const result = document.querySelector("#result")

@@ -1,26 +1,4 @@
-// show a message with type of the input
-function showMessage(input, message, type) {
-    const msg = input.parentNode.querySelector("small");
-    msg.innerText = message;
-    // update the class for the input
-    input.className = type ? "success" : "error"
-    return input
-}
-// Show error 
-function showError(input, message) {
-    return showMessage(input, message, false)
-}
-// Show success
-function showSuccess(input) {
-    return showMessage(input, "", true)
-}
-// check if the textboxes has a values
-function hasValue(input, message) {
-    if (input.value.trim() === "") {
-        return showError(input, message)
-    }
-    return showSuccess(input)
-}
+import { showMessage, showError, hasValue, showSuccess} from "./helper.js";
 
 // 
 const publish = document.querySelector(".writer-publish")
@@ -36,6 +14,17 @@ publish.addEventListener('click', (e) => {
     let storyValid = hasValue(story, STORY_REQUIRED)
 
     if (titleValid && storyValid) {
-        console.log("Publish already Done!!");
+        saveArticle(title.value, story.value)
     }
 })
+// Save a new story
+function saveArticle(title, content) {
+    let articles = JSON.parse(localStorage.getItem('articles'))
+
+    if (!articles === null) {
+        console.log(articles)
+    } else {
+        articles = []
+    }
+    console.log(articles)
+}
