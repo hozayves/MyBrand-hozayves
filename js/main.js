@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', e => {
+    const users = localStorage.getItem("users");
+    const newAdmin = {
+        id: Date.now(),
+        name: "Mukwiye lambert",
+        email: "example@abc.abc",
+        pwd: 'abc456',
+        status: 'admin',
+    }
+    let newUser = []
+    if (!users) {
+        newUser.push(newAdmin)
+        console.log(newUser)
+        localStorage.setItem("users", JSON.stringify(newUser))
+    } else {
+        console.log("Welcome back")
+    }
+})
+
+
 const menuBtn = document.querySelector(".header-hamburger");
 const navBar = document.querySelector(".nav");
 let menuOpen = false;
