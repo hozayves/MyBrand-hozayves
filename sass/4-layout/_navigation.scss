@@ -12,6 +12,7 @@
         right: 0;
         margin: 0 auto;
         z-index: 10;
+        user-select: none;
         @include tables {
             top: 2%;
         }
@@ -128,6 +129,52 @@
         }
         &-user-hamburger {
             gap: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-logged {
+                // border: 1px solid red;
+                position: relative;
+                padding: 5px 1rem;
+                border-radius: 100px;
+                span {
+                    font-weight: 700;
+                }
+                &:hover {
+                    background-color: map-get($colors, "bg-color");
+                    cursor: pointer;
+                }
+            }
+            &-popup {
+                position: absolute;
+                right: 0;
+                top: 2.5rem;
+                width: 150px;
+                border: 1px solid map-get($colors, "secondary-color");
+                background-color: map-get($colors, "bg-color");
+                border-radius: 5px;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    li {
+                        list-style: none;
+                        min-width: 100%;
+                        padding: 5px 1rem;
+                        box-sizing: border-box;
+                        &:hover {
+                            background-color: map-get($colors, "secondary-color")
+                        }
+                        a {
+                            text-decoration: none;
+                            color: map-get($colors, "input-color")
+                        }
+                    }
+                }
+            }
         }
         &-hamburger {
             z-index: 3;
@@ -180,6 +227,7 @@
 
             @include sm-desktop {
                 display: none;
+                
             }
             @include lg-desktop {
                 display: none;
@@ -222,4 +270,7 @@
     &:hover {
         background-color: #11111b;
     }
+}
+.profile-hidden {
+    visibility: hidden;
 }
