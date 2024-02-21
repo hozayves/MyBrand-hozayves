@@ -32,7 +32,6 @@ function validateEmail(input, requiredMsg, invalidMsg) {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     
     const email = input.value.trim();
-    const words = email.split(/\s+/);
     if (!emailRegex.test(email)) {
         return showError(input, invalidMsg)
     }
@@ -54,32 +53,35 @@ signForm.addEventListener('submit', e => {
 
     if (emailValid && passwordValid) {
         localStorage_login(signForm.elements['email'], signForm.elements['password'])
-        console.log("Check LocalStorage")
     }
 })
 
 // local storage
 function localStorage_login(email, password) {
 
-    let users;
-    if (localStorage.getItem("users") === null) {
-        return showError(result, 'We couldn\'t find an account with that email. signing up if you\'re new account <a href="./signup.html" style="font-weight: 700; font-size: 1rem; ">Sign Up</a>.')
-    } else {
-        users = JSON.parse(localStorage.getItem("users"))
-        let user = users.find(user => user.email === email.value && user.pwd === password.value);
+    // Check if there is users
+    const users = JSON.parse(localStorage.getItem("users"));
+    if (users.length > 0) {
+        const userEmail = users.find(user => user.email === email.value)
+        const userPwd = users.find(user => user.pwd === password.value)
 
-        if (user.email && user.pwd) {
-            localStorage.setItem('loggedInUser', JSON.stringify(user))
-            email.value = "";
-            password.value = ""
-            setTimeout(() => {
-                window.location.href = 'blogs.html'
-            }, 3000)
-
-        } else if (!user.email) {
-            return showError(email, "Oops! Please double-check or try different email.")
+        if (userEmail) {
+            showError(result, "")
+            if (userPwd) {
+                console.log("Logged In")
+                localStorage.setItem('loggedInUser', JSON.stringify({...userEmail, loggedIn: true}))
+                email.value = "";
+                password.value = ""
+                setTimeout(() => {
+                    window.location.href = 'blogs.html'
+                }, 1000)
+            } else {
+                return showError(password, "Invalid password. Please check your password and try again.")
+            }
         } else {
-            return showError(password, "Invalid password. Please check your password and try again.")
+            return showError(result, 'We couldn\'t find an account with that email. signing up if you\'re new account <a href="./signup.html" style="font-weight: 700; font-size: 1rem; ">Sign Up</a>.')
         }
+    } else {
+        return showError(result, 'We couldn\'t find an account with that email. signing up if you\'re new account <a href="./signup.html" style="font-weight: 700; font-size: 1rem; ">Sign Up</a>.')
     }
 }
