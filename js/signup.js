@@ -93,7 +93,6 @@ function saveLocalStorage(signup) {
         users = []
     } else {
         users = JSON.parse(localStorage.getItem('users'))
-        console.log(users)
     }
     users.push(signup)
     localStorage.setItem("users", JSON.stringify(users))
