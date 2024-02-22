@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", e => {
     getStory()
+
+    const commentBtn = document.querySelector(".blogx-blogger-links-comment");
+    commentBtn.addEventListener("click", () => {
+        console.log("Hello World!")
+    })
 })
 function getStory() {
     const title = document.querySelector(".blogx-header-title");
