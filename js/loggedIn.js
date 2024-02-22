@@ -1,5 +1,8 @@
+import { loggedIn } from "./helper.js";
+
 document.addEventListener('DOMContentLoaded', e => {
     const headerUser = document.querySelector(".header-user-hamburger");
+    const writeButton = document.querySelector(".blog-writer");
     if (loggedIn()) {
 
          let div = document.createElement("div")
@@ -32,24 +35,23 @@ document.addEventListener('DOMContentLoaded', e => {
         headerUser.insertBefore(a, headerUser.lastElementChild)
      }
 
+    //  write blog button
+    if(loggedIn().status === "admin") {
+        writeButton.removeAttribute("style")
+        console.log(loggedIn())
+    } 
     
 })
-
-function loggedIn() {
-    const user = localStorage.getItem("loggedInUser")
-    if (user) {
-        let activeUser = JSON.parse(localStorage.getItem("loggedInUser"))
-        return activeUser
-    } else {
-        return false
-    }
-}
+// Logout
 function logout() {
     const user = localStorage.getItem("loggedInUser");
 
     if (user) {
         localStorage.removeItem("loggedInUser")
         const currentPathName = window.location.pathname
-        window.location.href = currentPathName;
+        const search = window.location.search;
+        window.location.href = currentPathName + search;
     }
 }
+
+
