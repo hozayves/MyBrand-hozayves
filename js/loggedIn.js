@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', e => {
     //  write blog button
     if(loggedIn().status === "admin") {
         writeButton.removeAttribute("style")
-        console.log(loggedIn())
     } 
     
 })
@@ -53,5 +52,3 @@ function logout() {
         window.location.href = currentPathName + search;
     }
 }
-
-
