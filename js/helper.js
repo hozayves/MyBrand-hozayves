@@ -64,3 +64,12 @@ export function validateMinWords(input, wordNumb, message) {
     }
     return true
 }
+export function loggedIn() {
+    const user = localStorage.getItem("loggedInUser")
+    if (user) {
+        let activeUser = JSON.parse(localStorage.getItem("loggedInUser"))
+        return activeUser
+    } else {
+        return false
+    }
+}
