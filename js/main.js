@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', e => {
         email: "example@abc.abc",
         pwd: 'abc456',
         status: 'admin',
+        profile: ""
     }
     let newUser = []
     if (!users) {
@@ -33,18 +34,5 @@ menuBtn.addEventListener('click', () => {
         navBar.classList.add("nav-hidden")
         navBar.classList.remove("nav-visible")
         menuOpen = false;
-    }
-})
-// 
-const blogMore = document.getElementById("setting-icon");
-const blogSetting = document.getElementById("settings");
-let setting = false;
-blogMore.addEventListener("click", () => {
-    if (!setting) {
-        blogSetting.classList.add("active");
-        setting = true
-    } else {
-        blogSetting.classList.remove("active");
-        setting = false;
     }
 })
