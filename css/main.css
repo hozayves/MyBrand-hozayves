@@ -1705,10 +1705,6 @@ small {
   width: 100%;
 }
 
-body {
-  overflow: hidden;
-}
-
 .comment {
   border: 1px solid red;
   width: 350px;
