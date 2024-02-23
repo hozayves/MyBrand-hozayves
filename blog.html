@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="shortcut icon" href="./images/favicon1.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
     <title>hozayves - Blogs</title>
 </head>
 <body style="position: relative;">
@@ -48,12 +52,12 @@
                         <div class="blogx-blogger-profile"></div>
                         <div class="blogx-blogger-links">
                             <div class="blogx-blogger-links-like">
-                                <img src="./images/like.png" alt="">
-                                <span>23</span>
+                                <i class="ri-heart-line"></i>
+                                <span>0</span>
                             </div>
                             <div class="blogx-blogger-links-comment">
                                 <img src="./images/comment.png" alt="">
-                                <span>23</span>
+                                <span></span>
                             </div>
                             <div class="blogx-blogger-links-share">
                                 <img src="./images/share.png" alt="">
@@ -87,77 +91,23 @@
         </div>
         <p class="footer-copyright">Design & Built by Yves Muhoza &#169; 2024</p>
     </footer>
-    <div class="comment">
+    <div class="comment comment-hidden">
         <div class="comment-header">
             <h2 class="comment-header-title">Response</h2>
             <span class="comment-header-close">x</span>
         </div>
         <div class="comment-container">
-            <div class="comment-user">
-                <img src="./images/blogger-profile.png" alt="profile-image">
-                <p>Yves Muhoza</p>
-            </div>
+            <div class="comment-user"></div>
             <div class="comment-textbox">
-                <textarea name="" id="" cols="30" rows="10" placeholder="What are you thought?"></textarea>
+                <textarea class="comment-input" name="" id="" cols="30" rows="10" placeholder="What are you thought?"></textarea>
+                <small></small>
             </div>
             <div class="comment-btn">
                 <button>Response</button>
             </div>
         </div>
         <div class="comment-section">
-            <div class="comment-section-box">
-                <div class="comment-user">
-                    <img src="./images/blogger-profile.png" alt="profile-image">
-                    <div class="comment-user-text">
-                        <p>Yves Muhoza</p>
-                        <span>10 days</span>
-                    </div>
-                </div>
-                <p>
-                    Way too much over optimization happening everywhere. 
-                    So much bloat. Keep it simple. You forgot to link the article about useMemo btn.
-                </p>
-            </div>
-            <div class="comment-section-box">
-                <div class="comment-user">
-                    <img src="./images/blogger-profile.png" alt="profile-image">
-                    <div class="comment-user-text">
-                        <p>Yves Muhoza</p>
-                        <span>10 days</span>
-                    </div>
-                </div>
-                <p>
-                    Way too much over optimization happening everywhere. 
-                    So much bloat. Keep it simple. You forgot to link the article about useMemo btn.
-                </p>
-            </div>
-            <div class="comment-section-box">
-                <div class="comment-user">
-                    <img src="./images/blogger-profile.png" alt="profile-image">
-                    <div class="comment-user-text">
-                        <p>Yves Muhoza</p>
-                        <span>10 days</span>
-                    </div>
-                </div>
-                <p>
-                    Way too much over optimization happening everywhere. 
-                    So much bloat. Keep it simple. You forgot to link the article about useMemo btn.
-                </p>
-            </div>
-            <div class="comment-section-box">
-                <div class="comment-user">
-                    <img src="./images/blogger-profile.png" alt="profile-image">
-                    <div class="comment-user-text">
-                        <p>Yves Muhoza</p>
-                        <span>10 days</span>
-                    </div>
-                </div>
-                <p>
-                    Way too much over optimization happening everywhere. 
-                    So much bloat. Keep it simple. You forgot to link the article about useMemo btn.
-                </p>
-            </div>
-        </div>
+         </div>
     </div>
     <script src="./js/main.js"></script>
     <script src="./js/loggedIn.js" type="module"></script>
