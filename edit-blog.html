@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="./images/favicon1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.bubble.css" rel="stylesheet" />
+    <title>New Story - hozayves</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-logo">
+                <img
+                    class="header-logo-img1" 
+                    src="./images/log.png" 
+                    alt="">
+                <img src="./images/logo-body.png" alt="">
+            </div>
+            <nav class="nav nav-hidden">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#aboutMe">AboutMe</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="./blogs.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-user-hamburger">
+                <div class="header-hamburger" id="hamburger">
+                    <div class="btn-burger"></div>
+                </div>
+            </div>
+        </header>
+        <main class="writer">
+            <p class="publish-success"></p>
+            <div class="writer-header">
+                <button class="writer-publish update">Update</button>
+            </div>
+            <div class="writer-container">
+                <div class="writer-input">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="title" placeholder="Title">
+                    <small></small>
+                </div>
+                <div class="writer-input">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" class="image">
+                    <small></small>
+                </div>
+                <div class="writer-input">
+                    <label for="story">Tell us your story</label>
+                    <textarea type="text" id="story" class="story" placeholder="Tell us your story."></textarea>
+                    <small></small>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="./js/main.js"></script>
+<script src="./js/loggedIn.js" type="module"></script>
+<script type="module" src="./js/update-story.js"></script>
+</html>
