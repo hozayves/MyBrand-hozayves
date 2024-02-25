@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", e => {
     // loading logged in user profile in comment section
     const profile = document.createElement("div")
     profile.className = "comment-user"
-    if (loggedIn().profile === "") {
+    if (user(loggedIn().id).image === "") {
         profile.innerHTML = `
             <img src="${user(loggedIn().id).image ? user(loggedIn().id).image : "./images/profile-null.png"}" alt="profile-image">
             <p>${user(loggedIn().id).name}</p>
         `
     } else {
         profile.innerHTML = `
-            <img src="${loggedIn().profile}" alt="profile-image">
+            <img src="${user(loggedIn().id).image ? user(loggedIn().id).image : "./images/profile-null.png"}" alt="profile-image">
             <p>${loggedIn().name}</p>
         `
     }
