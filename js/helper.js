@@ -85,6 +85,14 @@ export function deleteArticleFunc(id) {
         window.location.href = "./blogs.html";
     }
 }
+// Get articles for blogger
+export function bloggerArticles(userId) {
+    const articles = JSON.parse(localStorage.getItem('articles'))
+    if (user(userId).status === "admin" && articles !== null) {
+        const article = articles.filter(article => article.bloggerId === userId );
+        return article
+    }
+}
 
 // Like function
 export function likeArticle(articleId, userId) {
@@ -96,11 +104,12 @@ export function likeArticle(articleId, userId) {
         timeStamp: new Date()
     }
     const likes = articles.find(article => article.id === articleId).likes
-    if (likes.find(like => like.userId !== userId) !== undefined) {
+    if (likes.find(like => like.userId !== userId)) {
         likes.push(likeObj)
         localStorage.setItem("articles", JSON.stringify(articles))
         return true
     }
+    console.log(likes.length)
     return false
 }
 // Unlike function
@@ -142,3 +151,52 @@ export function likeCommentCounter(articleId, likeBtn, commentBtn, userId) {
     
 }
 
+// Function for save comment in localstorage
+export function saveComment(comment, userId, articleId) {
+    const articles = JSON.parse(localStorage.getItem("articles"));
+    if (comment && userId && articleId) {
+        const article = articles.find(article => article.id === articleId);
+        article.comment.push({commentId: Date.now(), comment, userId, articleId, timeStamp: new Date()});
+        
+        localStorage.setItem('articles', JSON.stringify(articles))
+        return true
+    }
+    return false
+}
+// function for get comments for particular article in the localstorage
+export function getComments(articleId) {
+    const articles = JSON.parse(localStorage.getItem("articles"));
+    const comment = articles.find(article => article.id === articleId).comment;
+    if (comment.length > 0) {
+        return comment
+    } else {
+        return false
+    }
+}
+
+// function for get information for logged user based on provided userId
+export function user(userId) {
+    const users = JSON.parse(localStorage.getItem("users"));
+    if (userId) {
+        const user = users.find(user => user.id === userId)
+        return user
+    }
+}
+// function for get a visitor user
+export function getUsers() {
+    const users = JSON.parse(localStorage.getItem("users"))
+
+    if (users !== null) {
+        return users
+    }
+}
+export function saveUser(user) {
+    let users;
+    if (localStorage.getItem("users") === null) {
+        users = []
+    } else {
+        users = JSON.parse(localStorage.getItem('users'))
+    }
+    users.push(user)
+    localStorage.setItem("users", JSON.stringify(users))
+}
