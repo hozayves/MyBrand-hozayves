@@ -1,4 +1,4 @@
-import { loggedIn } from "./helper.js";
+import { loggedIn, deleteArticleFunc, user } from "./helper.js";
 document.addEventListener("DOMContentLoaded", e => {
     articles();
 })
@@ -10,16 +10,18 @@ function articles() {
         blog.innerHTML = "No article yet"
     } else {
         let articles = JSON.parse(localStorage.getItem("articles"));
-        articles.map(({id, title, content, image, date, bloggerName,}) => {
+        articles
+            .sort((a, b) => b.id - a.id)
+            .map(({id, title, content, image, date, bloggerId,}) => {
 
             let blogContainer = document.createElement("div");
             blogContainer.className = "blog-container"
             blogContainer.innerHTML = `
             <div class="blog-info">
                 <div class="blog-blogger">
-                    <img src="./images/blogger-profile.png" alt="">
+                    <img src="${user(bloggerId).image? user(bloggerId).image : './images/profile-null'}" alt="">
                     <div class="blog-blogger-name">
-                        <h2>${bloggerName}</h2>
+                        <h2>${user(bloggerId).name}</h2>
                         &#32;
                         &#x2022;
                         &#32;
@@ -52,9 +54,8 @@ function articles() {
                     </div>
                     <div class="blog-footer-setting-list settings">
                         <ul>
-                            <li><a href="#">Edit post</a></li>
-                            <li><a href="#">Post stats</a></li>
-                            <li><a href="#">Delete post</a></li>
+                            <li><a href="/edit-blog.html?edit=${id}">Edit post</a></li>
+                            <li><a class="delete-article">Delete post</a></li>
                         </ul>
                     </div>
                 </div>
@@ -62,7 +63,11 @@ function articles() {
             `;
             const settingIcon = blogContainer.querySelector('.setting-icon');
             const settingsList = blogContainer.querySelector('.settings');
-            
+            const deleteArticle = blogContainer.querySelector(".delete-article")
+            // Delete article
+            deleteArticle.addEventListener("click", () => {
+                deleteArticleFunc(id)
+            })
             settingIcon.addEventListener('click', (e) => {
                 // Toggle the 'active' class on the setting list
                 settingsList.classList.toggle('active')
@@ -71,9 +76,9 @@ function articles() {
             if(loggedIn().status === "admin") {
                 settingIcon.parentNode.removeAttribute("style")
             } 
-            
-            
             blog.appendChild(blogContainer);
+            
         })
+        
     }
 }
