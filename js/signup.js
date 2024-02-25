@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
             email: form.elements['email'].value,
             pwd: form.elements['password'].value,
             status: 'visitor',
-            profile: ""
+            image: ""
         }
         // Save a user to local storage
         saveUser(newUser)
