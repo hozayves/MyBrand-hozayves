@@ -21,10 +21,17 @@ document.addEventListener("DOMContentLoaded", e => {
     // loading logged in user profile in comment section
     const profile = document.createElement("div")
     profile.className = "comment-user"
-    profile.innerHTML = `
-        <img src="${user(loggedIn().id).image ? user(loggedIn().id).image : "./images/profile-null.png"}" alt="profile-image">
-        <p>${loggedIn().name}</p>
-    `
+    if (loggedIn().profile === "") {
+        profile.innerHTML = `
+            <img src="./images/profile-sample.png" alt="profile-image">
+            <p>${loggedIn().name}</p>
+        `
+    } else {
+        profile.innerHTML = `
+            <img src="${loggedIn().profile}" alt="profile-image">
+            <p>${loggedIn().name}</p>
+        `
+    }
     commentUser.appendChild(profile)
 
     commentBtn.addEventListener("click", () => {
