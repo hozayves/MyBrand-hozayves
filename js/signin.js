@@ -35,7 +35,7 @@ function localStorage_login(email, password) {
                 email.value = "";
                 password.value = ""
                 setTimeout(() => {
-                    window.location.href = 'blogs.html'
+                    window.location.href = './blogs.html';
                 }, 1000)
             } else {
                 return showError(password, "Invalid password. Please check your password and try again.")
