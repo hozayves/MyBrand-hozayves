@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", e => {
     profile.className = "comment-user"
     if (loggedIn().profile === "") {
         profile.innerHTML = `
-            <img src="./images/profile-sample.png" alt="profile-image">
-            <p>${loggedIn().name}</p>
+            <img src="${user(loggedIn().id).image ? user(loggedIn().id).image : "./images/profile-null.png"}" alt="profile-image">
+            <p>${user(loggedIn().id).name}</p>
         `
     } else {
         profile.innerHTML = `

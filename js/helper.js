@@ -104,12 +104,11 @@ export function likeArticle(articleId, userId) {
         timeStamp: new Date()
     }
     const likes = articles.find(article => article.id === articleId).likes
-    if (likes.find(like => like.userId !== userId)) {
+    if (likes.find(like => like.userId !== userId) || likes.length <= 0) {
         likes.push(likeObj)
         localStorage.setItem("articles", JSON.stringify(articles))
         return true
     }
-    console.log(likes.length)
     return false
 }
 // Unlike function
