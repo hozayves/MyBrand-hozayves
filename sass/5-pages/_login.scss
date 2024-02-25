@@ -13,6 +13,15 @@
         align-items: center;
         gap: 2rem;
         width: 80%;
+        @include tables{
+            width: 50%;
+        }
+        @include sm-desktop{
+            width: 50%;
+        }
+        @include lg-desktop{
+            width: 50%;
+        }
 
         h1 {
             text-align: center;
