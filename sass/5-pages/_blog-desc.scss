@@ -47,6 +47,10 @@
             &-img {
                 width: 30px;
                 height: 30px;
+
+                img {
+                    border-radius: 50%;
+                }
                 @include tables {
                     width: 45px;
                     height: 45px;
@@ -117,6 +121,7 @@
                 padding: 3px;
                 border: 1px solid map-get($colors, "secondary-color");
                 border-radius: 5px;
+                gap: 4px;
                 &:hover {
                     background-color: map-get($colors, "secondary-color");
                     cursor: pointer;

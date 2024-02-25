@@ -138,12 +138,14 @@
                 position: relative;
                 padding: 5px 1rem;
                 border-radius: 100px;
+                background-color: map-get($colors, "bg-color");
+                text-transform: capitalize;
                 span {
                     font-weight: 700;
                 }
                 &:hover {
-                    background-color: map-get($colors, "bg-color");
                     cursor: pointer;
+                    color: whitesmoke
                 }
             }
             &-popup {
