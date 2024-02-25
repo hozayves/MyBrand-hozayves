@@ -1,12 +1,10 @@
-import { showError, showSuccess, hasValue, validateEmail, validatePassword } from "./helper.js";
+import {hasValue, saveUser, validateEmail, validatePassword } from "./helper.js";
 
 const form = document.querySelector(".signup-form");
 
 const NAME_REQUIRED = "Please enter your name.";
 const EMAIL_REQUIRED = "Please enter your email.";
 const EMAIL_INVALID = "Please enter a correct email address format."
-const MESSAGE_REQUIRED = "Please enter your message!"
-const MESSAGE_SUCCESS = "Thank you for your message."
 const PASSWORD_REQUIRED = "Please enter your password"
 const PASSWORD_INVALID = "Your password must contain (abc1234) "
 
@@ -27,7 +25,7 @@ form.addEventListener("submit", (e) => {
             profile: ""
         }
         // Save a user to local storage
-        saveLocalStorage(newUser)
+        saveUser(newUser)
 
         // Empting a user form
         form.elements['name'].value = ""
@@ -36,14 +34,3 @@ form.addEventListener("submit", (e) => {
     }
     
 })
-
-function saveLocalStorage(signup) {
-    let users;
-    if (localStorage.getItem("users") === null) {
-        users = []
-    } else {
-        users = JSON.parse(localStorage.getItem('users'))
-    }
-    users.push(signup)
-    localStorage.setItem("users", JSON.stringify(users))
-}
