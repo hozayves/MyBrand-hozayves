@@ -73,3 +73,72 @@ export function loggedIn() {
         return false
     }
 }
+
+// Delete article function
+export function deleteArticleFunc(id) {
+    const articles = JSON.parse(localStorage.getItem("articles"))
+    const remainArticles = articles.filter(article => {
+        return article.id !== id
+    });
+    if (remainArticles !== -1) {
+        localStorage.setItem("articles", JSON.stringify(remainArticles))
+        window.location.href = "./blogs.html";
+    }
+}
+
+// Like function
+export function likeArticle(articleId, userId) {
+    const articles = JSON.parse(localStorage.getItem("articles"))
+
+    const likeObj = {
+        userId,
+        articleId,
+        timeStamp: new Date()
+    }
+    const likes = articles.find(article => article.id === articleId).likes
+    if (likes.find(like => like.userId !== userId) !== undefined) {
+        likes.push(likeObj)
+        localStorage.setItem("articles", JSON.stringify(articles))
+        return true
+    }
+    return false
+}
+// Unlike function
+export function unLikeArticle(articleId, userId) {
+    const articles = JSON.parse(localStorage.getItem('articles'))
+    if (articles !== null && articles.length > 0) {
+        let likes = articles.find(article => article.id === articleId).likes;
+        const userLike = likes.find(like => like.userId === userId)
+
+        if (userLike) {
+            // remove his/her like from this article
+            // filter like except his/her like
+            const likeIndex = likes.findIndex(like => like.userId === userId);
+            likes.splice(likeIndex, 1)
+            localStorage.setItem("articles", JSON.stringify(articles))
+            return true 
+        }
+        return false
+    }
+}
+
+// like and comment counter 
+export function likeCommentCounter(articleId, likeBtn, commentBtn, userId) {
+    const articles = JSON.parse(localStorage.getItem("articles"));
+    const article = articles.find(article => article.id === articleId)
+    const likeLength = article.likes.length;
+    const commentLength = article.comment.length === 0 ? "" : article.comment.length;
+    likeBtn.querySelector("span").innerText = likeLength;
+    commentBtn.querySelector("span").innerText = commentLength;
+    const userLike = article.likes.find(user => user.userId === userId)
+
+    if (userId && userLike) {
+        likeBtn.firstElementChild.classList.remove("ri-heart-line")
+        likeBtn.firstElementChild.classList.add("ri-heart-fill")
+        console.log("user-like: "+userLike.userId)
+    } else {
+        console.log("user does not like")
+    }
+    
+}
+
