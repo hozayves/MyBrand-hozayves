@@ -1574,6 +1574,21 @@ small {
   gap: 2rem;
   width: 80%;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .login-container {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .login-container {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .login-container {
+    width: 50%;
+  }
+}
 .login-container h1 {
   text-align: center;
 }
