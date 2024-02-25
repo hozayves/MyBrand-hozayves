@@ -50,8 +50,7 @@ function saveArticle(title, content) {
         content: content,
         image: imageData,
         date: new Date(),
-        bloggerName: loggedIn().name,
-        blogger: [{id: loggedIn().id, name: loggedIn().name, profile: loggedIn().profile}],
+        bloggerId: loggedIn().id,
         comment: [],
         likes: [],
         tags: ["ux", "backend", "css"]
