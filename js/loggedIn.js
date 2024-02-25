@@ -1,4 +1,4 @@
-import { loggedIn, user } from "./helper.js";
+import { loggedIn } from "./helper.js";
 
 document.addEventListener('DOMContentLoaded', e => {
     const headerUser = document.querySelector(".header-user-hamburger");
@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', e => {
          let div = document.createElement("div")
         div.className = 'header-user-hamburger-logged'
         div.innerHTML = `
-            <span>${user(loggedIn().id).name.substring(0, 11)} </span>
+            <span>${loggedIn().name.substring(0, 11)} </span>
             <div class="header-user-hamburger-popup profile-hidden">
                 <ul>
-                    <li><a href="./profile.html?user=${user(loggedIn().id).id}">Profile</a></li>
+                    <li><a href="./profile.html?user=${(loggedIn().id)}">Profile</a></li>
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </div>`;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', e => {
         logoutBtn.addEventListener('click', e => {
             logout()
         })
-    } else {
+     } else {
         const a = document.createElement("a");
         a.href="./login.html";
         a.innerHTML = '<img src="./images/profile-icon.png" alt="">'
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', e => {
      }
 
     //  write blog button
-    if(user(loggedIn().id).status === "admin" && writeButton) {
+    if(loggedIn().status === "admin" && writeButton) {
         writeButton.removeAttribute("style")
     } 
     
