@@ -227,6 +227,7 @@ small {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .header nav li {
+    width: inherit;
     padding: 1.5rem 0;
   }
   .header nav li:hover {
@@ -235,6 +236,7 @@ small {
 }
 @media (min-width: 1200px) {
   .header nav li {
+    width: inherit;
     padding: 1.5rem 0;
   }
   .header nav li:hover {
