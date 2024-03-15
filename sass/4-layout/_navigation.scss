@@ -91,12 +91,14 @@
                     padding: 0.5rem 0;
                 }
                 @include sm-desktop {
+                    width: inherit;
                     padding: 1.5rem 0;
                     &:hover {
                     background-color: transparent;
                 }
                 }
                 @include lg-desktop {
+                    width: inherit;
                     padding: 1.5rem 0;
                     &:hover {
                     background-color: transparent;
