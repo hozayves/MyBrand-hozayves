@@ -4,6 +4,7 @@
         flex-direction: column;
         gap: 1rem;
         &-title {
+            text-transform: capitalize;
             font-weight: 700;
             line-height: 1.2;
             font-size: 1rem;
@@ -75,6 +76,7 @@
                 h2 {
                     font-size: 0.8rem;
                     font-weight: 700;
+                    text-transform: capitalize;
                     @include tables {
                         font-size: 0.9rem;
                     }
@@ -136,6 +138,7 @@
         gap: 1rem;
 
         p,li {
+            text-transform: capitalize;
             letter-spacing: -0.003em;
             line-height: 25px;
             font-size: 15px;
