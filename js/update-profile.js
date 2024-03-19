@@ -1,6 +1,7 @@
-import { user, hasValue, validateEmail, loggedIn } from "./helper.js";
+import { hasValue, validateEmail, loggedIn } from "./helper.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
   const {
     user: { name, _id, email, image },
   } = await loggedIn();
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         email: form.elements["email"].value,
       };
       const token = localStorage.getItem("token");
-      const endpoint = new URL("http://localhost:9000/api/users");
+      const endpoint = new URL(`${apiEndpointURL}/api/users`);
       endpoint.searchParams.set("access_token", token);
       try {
         const user = await fetch(endpoint, {

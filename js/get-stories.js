@@ -4,6 +4,9 @@ import {
   formatTimeAgo,
   calculateReadingTime,
 } from "./helper.js";
+
+const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
+
 document.addEventListener("DOMContentLoaded", (e) => {
   articles();
 });
@@ -13,7 +16,7 @@ async function articles() {
   if (await loggedIn()) {
     const { admin } = await loggedIn();
   }
-  const data = await fetch("http://localhost:9000/api/blogs", {
+  const data = await fetch(`${apiEndpointURL}/api/blogs`, {
     methods: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +47,7 @@ async function articles() {
                     </a>
                     <a href="./blog.html">
                         <div class="blog-image">
-                            <img src="../../upload/image/${image}" alt="">
+                            <img src="${image}" alt="">
                         </div>
                     </a>
                 </div>
@@ -97,7 +100,7 @@ async function articles() {
 }
 async function getBlogger(id, date) {
   const token = localStorage.getItem("token");
-  const url = new URL(`http://localhost:9000/api/users/${id}`);
+  const url = new URL(`${apiEndpointURL}/api/users/${id}`);
   url.searchParams.set("access_token", token);
   try {
     const blogger = await fetch(url, {
@@ -109,11 +112,10 @@ async function getBlogger(id, date) {
     const {
       userWithTime: { name, profile },
     } = await blogger.json();
+    console.log(profile);
     // Construct HTML content
     const htmlContent = `
-    <img src="../../upload/image/${
-      profile ? profile : "./images/profile-null"
-    }" alt="">
+    <img src="${profile ? profile : "./images/profile-null.png"}" alt="">
       <div class="blog-blogger-name">
           <h2>${name}</h2>
           &#32;

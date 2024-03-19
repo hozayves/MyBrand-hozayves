@@ -1,5 +1,5 @@
 const token = localStorage.getItem("token");
-const baseURL = "http://localhost:9000";
+const baseURL = "https://blog-apis-nfgp.onrender.com";
 
 // show a message with type of the input
 export function showMessage(input, message, type) {
@@ -68,19 +68,18 @@ export function validateMinWords(input, wordNumb, message) {
 }
 // Function to
 export async function loggedIn() {
-  let token = localStorage.getItem("token");
   if (!token) return false;
   try {
     const endpoint = new URL(`${baseURL}/api/users/me`);
     endpoint.searchParams.set("access_token", token);
-    token = await fetch(endpoint, {
+    const res = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `${token}`,
       },
     });
-    const response = await token.json();
+    const response = await res.json();
     return response;
   } catch (error) {
     console.log(error);
@@ -188,21 +187,6 @@ export async function saveComment(comment, articleId) {
   } finally {
     console.log("Commented.");
   }
-  const articles = JSON.parse(localStorage.getItem("articles"));
-  if (comment && userId && articleId) {
-    const article = articles.find((article) => article.id === articleId);
-    article.comment.push({
-      commentId: Date.now(),
-      comment,
-      userId,
-      articleId,
-      timeStamp: new Date(),
-    });
-
-    localStorage.setItem("articles", JSON.stringify(articles));
-    return true;
-  }
-  return false;
 }
 // function for get comments for particular article in the localstorage
 export async function getComments(articleId) {
@@ -230,22 +214,6 @@ export async function getComments(articleId) {
   }
 }
 
-// function for get information for logged user based on provided userId
-export function user(userId) {
-  const users = JSON.parse(localStorage.getItem("users"));
-  if (userId) {
-    const user = users.find((user) => user.id === userId);
-    return user;
-  }
-}
-// function for get a visitor user
-export function getUsers() {
-  const users = JSON.parse(localStorage.getItem("users"));
-
-  if (users !== null) {
-    return users;
-  }
-}
 // functin for getting contact message
 export function contactMe() {}
 export function saveUser(user) {

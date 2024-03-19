@@ -5,6 +5,7 @@ import {
   validateEmail,
   validatePassword,
 } from "./helper.js";
+const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
 
 const form = document.querySelector(".signup-form");
 const formContainer = document.querySelector(".login-form-container");
@@ -37,7 +38,7 @@ form.addEventListener("submit", async (e) => {
     };
     // Call API for create a new user
     try {
-      const response = await fetch("http://localhost:9000/api/users", {
+      const response = await fetch(`${apiEndpointURL}/api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -9,6 +9,7 @@ import {
   formatTimeAgo,
   calculateReadingTime,
 } from "./helper.js";
+const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
 
 document.addEventListener("DOMContentLoaded", async (e) => {
   let loggedUser = [];
@@ -49,13 +50,13 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     profile.innerHTML = `
             <img src="${
               loggedUser[0].image
-                ? `../../upload/image/${loggedUser[0].image}`
+                ? `${loggedUser[0].image}`
                 : "./images/profile-null.png"
             }" alt="profile-image">
             <p>${loggedUser[0].name}</p>
         `;
   } else {
-    window.location.href = "./login.html";
+    // window.location.href = "./login.html";
   }
   commentUser.appendChild(profile);
   // Comment event listener
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
                     <div class="comment-user">
                     <img src="${
                       comment.user.profile
-                        ? `../../upload/image/${comment.user.profile}`
+                        ? `${comment.user.profile}`
                         : "./images/profile-null.png"
                     }" alt="profile-image">
                     <div class="comment-user-text">
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
                         <div class="comment-user">
                         <img src="${
                           loggedUser[0].image
-                            ? `../../upload/image/${loggedUser[0].image}`
+                            ? `${loggedUser[0].image}`
                             : "./images/profile-null.png"
                         }" alt="profile-image">
                         <div class="comment-user-text">
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         }
       });
     } else {
-      window.location.href = "../login.html";
+      window.location.href = "./login.html";
     }
   });
   closeComment.addEventListener("click", () => {
@@ -166,7 +167,7 @@ async function getStory(id) {
 
   // get articles from mongodb
   const token = localStorage.getItem("token");
-  const endpoint = new URL(`http://localhost:9000/api/blogs/${id}`);
+  const endpoint = new URL(`${apiEndpointURL}/api/blogs/${id}`);
   endpoint.searchParams.set("access_token", token);
   let articlesData = await fetch(endpoint, {
     method: "GET",
@@ -180,7 +181,7 @@ async function getStory(id) {
   title.innerHTML = articles.title;
   content.firstElementChild.firstElementChild.setAttribute(
     "src",
-    `../../upload/image/${articles.image}`
+    `${articles.image}`
   );
   content.lastElementChild.innerHTML = articles.story;
 
@@ -192,7 +193,7 @@ async function getStory(id) {
 
 async function getBlogger(id, date) {
   const token = localStorage.getItem("token");
-  const url = new URL(`http://localhost:9000/api/users/${id}`);
+  const url = new URL(`${apiEndpointURL}/api/users/${id}`);
   url.searchParams.set("access_token", token);
   try {
     const blogger = await fetch(url, {
@@ -207,7 +208,7 @@ async function getBlogger(id, date) {
     // Construct HTML content
     const htmlContent = `
       <div class="blogx-blogger-profile-img">
-            <img src="../../upload/image/${
+            <img src="${
               profile ? profile : "./images/profile-null.png"
             }" alt="">
         </div>

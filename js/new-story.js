@@ -1,5 +1,7 @@
 import { hasValue } from "./helper.js";
 import { loggedIn } from "./helper.js";
+
+const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
 //
 const publish = document.querySelector(".writer-publish");
 const result = document.querySelector(".publish-success");
@@ -30,7 +32,7 @@ publish.addEventListener("click", async (e) => {
     console.log(formData);
 
     const token = localStorage.getItem("token");
-    const endpoint = new URL("http://localhost:9000/api/blogs");
+    const endpoint = new URL(`${apiEndpointURL}/api/blogs`);
     endpoint.searchParams.set("access_token", token);
     const newStory = await fetch(endpoint, {
       method: "POST",
