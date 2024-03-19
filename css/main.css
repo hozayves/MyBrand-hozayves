@@ -121,9 +121,7 @@ small {
   right: 0;
   margin: 0 auto;
   z-index: 10;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -227,6 +225,7 @@ small {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .header nav li {
+    width: inherit;
     padding: 1.5rem 0;
   }
   .header nav li:hover {
@@ -235,6 +234,7 @@ small {
 }
 @media (min-width: 1200px) {
   .header nav li {
+    width: inherit;
     padding: 1.5rem 0;
   }
   .header nav li:hover {
@@ -474,9 +474,7 @@ small {
 .section-header {
   font-size: 1.5rem;
   font-weight: 500;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -566,9 +564,7 @@ small {
   font-family: "Segoe UI";
   font-size: 4rem;
   line-height: 1.2;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .hero-bio {
   font-size: 1.4rem;
@@ -576,9 +572,7 @@ small {
   padding-top: 10px;
   line-height: 1.5;
   font-family: "Segoe UI";
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-bio {
@@ -625,9 +619,7 @@ small {
   }
 }
 .aboutme p {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .aboutme p {
@@ -1139,6 +1131,7 @@ small {
 }
 .blog-blogger-name h2 {
   font-size: 0.7rem;
+  text-transform: capitalize;
   letter-spacing: -1px;
   font-weight: bold;
 }
@@ -1179,6 +1172,7 @@ small {
 }
 .blog-name {
   line-height: 1.2;
+  text-transform: capitalize;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -1201,6 +1195,7 @@ small {
 }
 .blog-desc {
   display: none;
+  text-transform: capitalize;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .blog-desc {
@@ -1247,21 +1242,26 @@ small {
   gap: 5px;
   margin-top: 1rem;
 }
-.blog-footer span:nth-child(1) {
+.blog-footer span:nth-child(n) {
   font-size: 0.7rem;
+  margin-right: 5px;
+  cursor: pointer;
   padding: 4px 6px;
   border: 1px solid #24242d;
   font-weight: 500;
   border-radius: 50px;
 }
+.blog-footer span:nth-child(n):hover {
+  background-color: #24242d;
+}
 @media (min-width: 992px) and (max-width: 1199px) {
-  .blog-footer span:nth-child(1) {
+  .blog-footer span:nth-child(n) {
     font-size: 0.8rem;
     padding: 4px 10px;
   }
 }
 @media (min-width: 1200px) {
-  .blog-footer span:nth-child(1) {
+  .blog-footer span:nth-child(n) {
     font-size: 0.8rem;
     padding: 4px 10px;
   }
@@ -1356,6 +1356,7 @@ small {
   gap: 1rem;
 }
 .blogx-header-title {
+  text-transform: capitalize;
   font-weight: 700;
   line-height: 1.2;
   font-size: 1rem;
@@ -1443,6 +1444,7 @@ small {
 .blogx-blogger-profile-name h2 {
   font-size: 0.8rem;
   font-weight: 700;
+  text-transform: capitalize;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .blogx-blogger-profile-name h2 {
@@ -1519,6 +1521,7 @@ small {
   gap: 1rem;
 }
 .blogx-content p, .blogx-content li {
+  text-transform: capitalize;
   letter-spacing: -0.003em;
   line-height: 25px;
   font-size: 15px;
@@ -1772,9 +1775,7 @@ small {
   font-weight: 600;
 }
 .comment-header-close {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 1.2rem;
   cursor: pointer;
   line-height: 1;
