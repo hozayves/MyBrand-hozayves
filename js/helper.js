@@ -48,7 +48,8 @@ export function validatePassword(input, requiredMsg, invalidMsg) {
     return false;
   }
   // validate password
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.+\d)[A-Za-z\d]{1,7}$/;
+  const passwordRegex =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!?])(?!.*\s).{8,}$/;
 
   const pwd = input.value.trim();
   if (!passwordRegex.test(pwd)) {

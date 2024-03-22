@@ -14,7 +14,7 @@ const NAME_REQUIRED = "Please enter your name.";
 const EMAIL_REQUIRED = "Please enter your email.";
 const EMAIL_INVALID = "Please enter a correct email address format.";
 const PASSWORD_REQUIRED = "Please enter your password";
-const PASSWORD_INVALID = "Your password must contain (abc1234) ";
+const PASSWORD_INVALID = "Make your password strong like (abcd#1234!)";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
