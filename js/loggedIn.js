@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
             <div class="header-user-hamburger-popup profile-hidden">
                 <ul>
                     <li><a href="./profile.html">Profile</a></li>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </div>`;

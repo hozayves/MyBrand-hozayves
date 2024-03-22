@@ -1,0 +1,32 @@
+.dash {
+    margin: 10rem auto 0;
+    display: flex;
+    gap: 3rem;
+    width: 90%;
+
+    &-menu {
+        border-right: 1px solid map-get($colors, "secondary-color");
+        
+        ul {
+            width: 10rem;
+            margin-top: 1rem;
+            li {
+                list-style-type: none;
+                padding: 1rem 0;
+                border-bottom: 1px solid map-get($colors, "secondary-color");
+                &:hover {
+                    background: map-get($colors, "input-color");
+                    color: map-get($colors, "bg-footer");
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &-main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

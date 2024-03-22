@@ -81,7 +81,7 @@ async function articles() {
                       </div>
                       <div class="blog-footer-setting-list settings">
                           <ul>
-                              <li><a href="/edit-blog.html?edit=${_id}">Edit post</a></li>
+                              <li><a href="./edit-blog.html?edit=${_id}">Edit post</a></li>
                               <li><a class="delete-article">Delete post</a></li>
                           </ul>
                       </div>
