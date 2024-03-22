@@ -11,6 +11,9 @@ import {
 } from "./helper.js";
 const apiEndpointURL = "https://blog-apis-nfgp.onrender.com";
 
+const blogx = document.querySelector(".blogx");
+const loader = document.querySelector(".loader");
+
 document.addEventListener("DOMContentLoaded", async (e) => {
   let loggedUser = [];
   if (await loggedIn()) {
@@ -161,34 +164,42 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 });
 // Function to get blog based on its Id
 async function getStory(id) {
-  const title = document.querySelector(".blogx-header-title");
-  const content = document.querySelector(".blogx-content");
-  const profileContaier = document.querySelector(".blogx-blogger-profile");
+  loader.classList.remove("loader-hidden");
+  try {
+    const title = document.querySelector(".blogx-header-title");
+    const content = document.querySelector(".blogx-content");
+    const profileContaier = document.querySelector(".blogx-blogger-profile");
 
-  // get articles from mongodb
-  const token = localStorage.getItem("token");
-  const endpoint = new URL(`${apiEndpointURL}/api/blogs/${id}`);
-  endpoint.searchParams.set("access_token", token);
-  let articlesData = await fetch(endpoint, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const data = await articlesData.json();
-  const articles = data.blog;
+    // get articles from mongodb
+    const token = localStorage.getItem("token");
+    const endpoint = new URL(`${apiEndpointURL}/api/blogs/${id}`);
+    endpoint.searchParams.set("access_token", token);
+    let articlesData = await fetch(endpoint, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await articlesData.json();
+    const articles = data.blog;
 
-  title.innerHTML = articles.title;
-  content.firstElementChild.firstElementChild.setAttribute(
-    "src",
-    `${articles.image}`
-  );
-  content.lastElementChild.innerHTML = articles.story;
+    title.innerHTML = articles.title;
+    content.firstElementChild.firstElementChild.setAttribute(
+      "src",
+      `${articles.image}`
+    );
+    content.lastElementChild.innerHTML = articles.story;
 
-  profileContaier.innerHTML = await getBlogger(
-    articles.blogger,
-    articles.createdAt
-  );
+    profileContaier.innerHTML = await getBlogger(
+      articles.blogger,
+      articles.createdAt
+    );
+  } catch (error) {
+    console.log(error);
+  } finally {
+    blogx.classList.remove("loader-hidden");
+    loader.classList.add("loader-hidden");
+  }
 }
 
 async function getBlogger(id, date) {

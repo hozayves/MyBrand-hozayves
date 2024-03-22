@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="./images/favicon1.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div class="container">
         <header class="header" >
             <div class="header-logo">
                 <img
-                    class="header-logo-img1" 
-                    src="./images/log.png" 
-                    alt="">
+                class="header-logo-img1" 
+                src="./images/log.png" 
+                alt="">
                 <img src="./images/logo-body.png" alt="">
             </div>
             <nav class="nav-hidden nav">
@@ -56,21 +65,7 @@
                     <div class="section-line"></div>
                 </div>
                 <div class="aboutme-about">
-                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="50" data-aos-offset="100">Hi! My name is Yves, I'm a front-end developer on a journey 
-                        that kicked off just over a year ago.  Self-taught and committed to
-                         continuous improvement, I bring autonomy and problem-solving skills 
-                        to development. Beyond the screen, my passion for film photography 
-                        has shaped my approach to design, appreciating the nuances of layout
-                         and color schemes, much like framing the perfect shot. 
-                        Excited to contribute and grow in a dynamic environment, bringing freshness 
-                        and dedication to your projects by giving me the opportunity to collaborate 
-                        and learn. Let's create something amazing together!
-                        </p>
-                    <div class="aboutme-profile" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="100">
-                        <img
-                            src="./images/profile.jpg" 
-                            alt="">
-                    </div>
+                    
                 </div>
             </section>
             <section id="skills" class="skills">
@@ -197,24 +192,7 @@
             </section>
         </main>
     </div>
-    <footer class="footer">
-        <h2 class="footer-heading">Learning, Living, Level Up.</h2>
-        <div class="footer-social">
-            <a href="#" target="_blank">
-                <img src="./images/instagram(1) 1.png" alt="">
-            </a>
-            <a href="https://twitter.com/hozayves" target="_blank">
-                <img src="./images/twitter 1.png" alt="">
-            </a>
-            <a href="https://www.linkedin.com/in/muhoza-yves-ab06a7133/" target="_blank">
-                <img src="./images/linkedin.png" alt="">
-            </a>
-            <a href="https://github.com/hozayves" target="_blank">
-                <img src="./images/github.png" alt="">
-            </a>
-        </div>
-        <p class="footer-copyright">Design & Built by Yves Muhoza &#169; 2024</p>
-    </footer>
+    <footer class="footer"></footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
@@ -222,6 +200,9 @@
         disable: window.innerWidth <= 968
       })
     </script>
+
+    <script type="text/babel" src="./src/footer.jsx"></script>
+    <script type="text/babel" src="./src/aboutme.jsx"></script>
     <script src="./js/main.js"></script>
     <script src="./js/validate-contactme.js" type="module"></script>
 </body>

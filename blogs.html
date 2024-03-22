@@ -35,7 +35,8 @@
         </header>
         <main class="main-blog">
             <div class="blog-heading">
-                <div class="blog-search">
+                <!-- hide search box -->
+                <div class="blog-search" style="display: none;">
                     <img src="./images/circum_search.png" alt="">
                     <input type="text" placeholder="Search">
                 </div>
@@ -44,7 +45,13 @@
                     <span>write</span>
                 </a>
             </div>
-            <div class="blog"></div>
+            <!-- loading spinner -->
+            <div class="loader-container">
+                <div class="loader loader-hidden"></div> 
+            </div>
+            <div class="blog">
+                
+            </div>
         </main>
     </div>
     <footer class="footer">
