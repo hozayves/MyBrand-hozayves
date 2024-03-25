@@ -98,8 +98,9 @@ export async function deleteArticleFunc(id) {
     const data = await blog.json();
     if (data.ok) {
       console.log("Delete successful");
+      window.location.href = "./blogs.html";
     } else {
-      alert("Nooooooooo");
+      alert("Something goes wrong. Try again later");
       console.log(data);
     }
   } catch (error) {
